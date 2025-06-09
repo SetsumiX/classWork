@@ -1,2 +1,1 @@
-Hello...
-well this is nothing do...))))
+Обнавлённая домашка
