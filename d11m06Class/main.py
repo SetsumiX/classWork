@@ -141,20 +141,37 @@
 # animal_sound(dog)
 # animal_sound(cat)
 
-class Order:
-    def __init__(self, customer, product):
-        self.customer = customer
-        self.product = product
-    def total_price(self):
-        return sum(product.price for product in self.product)
+# class Order:
+#     def __init__(self, customer, product):
+#         self.customer = customer
+#         self.product = product
+#     def total_price(self):
+#         return sum(product.price for product in self.product)
+#
+# class Products:
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+#
+# banana = Products("Banana", 1)
+# apple = Products("Apple", 0.3)
+#
+# alice_order = Order("Alice", [banana, apple])
+# print(f"All stuff cost: {alice_order.total_price()}$")
 
-class Products:
-    def __init__(self, name, price):
+class StageShip:
+    fuel_type = "Твёрдое топливо"
+    def __init__(self, name):
         self.name = name
-        self.price = price
 
-banana = Products("Banana", 1)
-apple = Products("Apple", 0.3)
+StageOne = StageShip("Двигатель разгона")
+StageTwo = StageShip("Двигатели стабилизации скорости для поддержания орбиты")
 
-alice_order = Order("Alice", [banana, apple])
-print(f"All stuff cost: {alice_order.total_price()}$")
+print(StageOne.name)
+print(StageTwo.name)
+print(StageOne.fuel_type)
+print(StageTwo.fuel_type)
+
+StageTwo.fuel_type = "Жидкое топливо"
+print(StageOne.fuel_type)
+print(StageTwo.fuel_type)
