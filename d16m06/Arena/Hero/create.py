@@ -9,7 +9,6 @@ class Creature:
 
     def set_d(self, key, value):
         self.dt[key] = value
-        print(self.dt[key])
 
     def get_d(self):
         return self.dt

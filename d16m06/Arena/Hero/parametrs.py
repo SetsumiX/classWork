@@ -1,17 +1,17 @@
 from time import sleep
-from start.d16m06.Arena.Creatures.create import Creature
+from start.d16m06.Arena.Hero.create import Creature
 from start.d16m06.Arena.tools.cteate_params import GetPar
 from start.d16m06.Arena.game.index import game
 
-def choice_param(name):
+def choice_param(hero):
     spec = ["Archer", "Swordman", "Assasin"]
     print("===============================")
-    print(f"{name.get_name()}, а ну посмотрим, какие у тебя боевые параметры")
+    print(f"{hero.get_name()}, а ну посмотрим, какие у тебя боевые параметры")
     print("===============================")
     sleep(.6)
     d = {
         "power": GetPar.choice(),
-        "healths": GetPar.choice(),
+        "health": GetPar.choice(),
         "agility": GetPar.choice(),
         "damage": GetPar.param(),
         "defense": GetPar.param(),
@@ -33,12 +33,12 @@ def choice_param(name):
         match c:
             case "1":
                 d["spec"] = "Лучник"
-                d["healths"] = d["healths"] - 1
+                d["health"] = d["health"] - 1
                 d["agility"] = d["agility"] + 1
                 break
             case "2":
                 d["spec"] = "Мечник"
-                d["healths"] = d["healths"] + 1
+                d["health"] = d["healths"] + 1
                 d["agility"] = 2
                 d["defense"] = d["defense"] + 2
                 break
@@ -60,9 +60,8 @@ def choice_param(name):
 
     if you_sure == "y":
         for k, v in d.items():
-            print(k, v)
-            name.set_d(k, v)
-        game(name)
+            hero.set_d(k, v)
+        game(hero)
 
     else:
-        choice_param(name)
+        choice_param(hero)
