@@ -1,17 +1,16 @@
-from start.d16m06.Arena.Hero.create import Creature
-from start.d16m06.Arena.Hero.parametrs import choice_param
+from d16m06.Arena.Hero.create import Creature
+from d16m06.Arena.Hero.parametrs import choice_param
+from d16m06.Arena.Dialogues.dialogues import dial
 
 if __name__ == "__main__":
-    inp = input("Приветствую путник, не проходи мимо, и назовись\n"
-                "Ответ: ")
+    inp = input(dial[1])
     hero = Creature(inp) if inp else Creature("Молчаливый")
-    q = input(f"Слушай {Creature.get_name(hero)}, ...а не хочешь ли заработать?\n"
-              f"Ответ y/n(any): ").lower()
+    q = input(f"Слушай {Creature.get_name(hero)}, {dial[10]}").lower()
 
     match q:
         case "y":
-            print("Окак, тогда...")
+            print(dial[2])
             choice_param(hero)
 
         case _:
-            print("Ладненько, тогда, если нужны будут деньги, ты знаеш где меня искать")
+            print(dial[3])

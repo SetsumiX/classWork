@@ -1,4 +1,4 @@
-from start.d16m06.Arena.tools.create_card import create_card
+from d16m06.Arena.tools.create_card import create_card
 
 def show(hero, bot):
     hero_card = create_card(hero.get_d(), "YOU")

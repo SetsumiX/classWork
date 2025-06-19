@@ -1,4 +1,5 @@
 from random import randint
+from d16m06.Arena.Dialogues.dialogues import dial
 
 def calc_damage(attack, deff):
     base_damage = attack['damage'] + (attack['agility'] // 2)
@@ -40,11 +41,10 @@ def fight(hero, bot):
             print(f"Враг нанёс вам {damage} урона, у вас осталось {hero_data['health']}")
 
         if hero_data['health'] <= 0:
-            print("Вы не смогли заработать, увы...")
+            print(dial[13])
             break
-        print("Бой продолжается")
+        print(dial[14])
 
-    restart = input(f"Хотите играть заного?\n"
-                    f"Ответ y/n(any): ")
+    restart = input(dial[15])
     if restart == "y":
         return True

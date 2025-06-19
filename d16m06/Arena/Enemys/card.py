@@ -1,5 +1,5 @@
-from start.d16m06.Arena.Enemys.data import data
-from start.d16m06.Arena.tools.create_card import create_card
+from d16m06.Arena.Enemys.data import data
+from d16m06.Arena.tools.create_card import create_card
 
 arr = []
 
