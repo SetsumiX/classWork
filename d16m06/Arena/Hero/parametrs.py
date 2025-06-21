@@ -1,5 +1,5 @@
 from time import sleep
-from d16m06.Arena.Hero.create import Creature
+from d16m06.Arena.Hero.create import Hero
 from d16m06.Arena.tools.cteate_params import GetPar
 from d16m06.Arena.game.index import game
 from d16m06.Arena.Dialogues.dialogues import dial
@@ -12,7 +12,7 @@ def choice_param(hero):
     sleep(.6)
     d = {
         "power": GetPar.choice(),
-        "health": GetPar.choice(),
+        "health": GetPar.choice_hp(),
         "agility": GetPar.choice(),
         "damage": GetPar.param(),
         "defense": GetPar.param(),
@@ -31,17 +31,18 @@ def choice_param(hero):
         match c:
             case "1":
                 d["spec"] = "Лучник"
-                d["health"] = d["health"] - 1
+                d["health"] = d["health"] - 10
                 d["agility"] = d["agility"] + 1
                 break
             case "2":
                 d["spec"] = "Мечник"
-                d["health"] = d["healths"] + 1
+                d["health"] = d["healths"] + 10
                 d["agility"] = 2
                 d["defense"] = d["defense"] + 2
                 break
             case "3":
                 d["spec"] = "Ассасин"
+                d["health"] = d["health"] - 15
                 d["agility"] = d["agility"] + 3
                 d["damage"] = d["damage"] + 2
                 d["defense"] = 1

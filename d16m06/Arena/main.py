@@ -1,11 +1,11 @@
-from d16m06.Arena.Hero.create import Creature
+from d16m06.Arena.Hero.create import Hero
 from d16m06.Arena.Hero.parametrs import choice_param
 from d16m06.Arena.Dialogues.dialogues import dial
 
 if __name__ == "__main__":
     inp = input(dial[1])
-    hero = Creature(inp) if inp else Creature("Молчаливый")
-    q = input(f"Слушай {Creature.get_name(hero)}, {dial[10]}").lower()
+    hero = Hero(inp) if inp else Hero("Молчаливый")
+    q = input(f"Слушай {Hero.get_name(hero)}, {dial[10]}").lower()
 
     match q:
         case "y":
