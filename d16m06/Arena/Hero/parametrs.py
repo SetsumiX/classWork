@@ -1,17 +1,18 @@
 from time import sleep
-from start.d16m06.Arena.Hero.create import Creature
-from start.d16m06.Arena.tools.cteate_params import GetPar
-from start.d16m06.Arena.game.index import game
+from d16m06.Arena.Hero.create import Hero
+from d16m06.Arena.tools.cteate_params import GetPar
+from d16m06.Arena.game.index import game
+from d16m06.Arena.Dialogues.dialogues import dial
 
 def choice_param(hero):
     spec = ["Archer", "Swordman", "Assasin"]
     print("===============================")
-    print(f"{hero.get_name()}, а ну посмотрим, какие у тебя боевые параметры")
+    print(f"{hero.get_name()}, {dial[9]}")
     print("===============================")
     sleep(.6)
     d = {
         "power": GetPar.choice(),
-        "health": GetPar.choice(),
+        "health": GetPar.choice_hp(),
         "agility": GetPar.choice(),
         "damage": GetPar.param(),
         "defense": GetPar.param(),
@@ -19,44 +20,41 @@ def choice_param(hero):
         "score": 0,
         "spec": "",
     }
-    print("===============================")
-    print(f"Ох, а ты хорош, почти... А сейчас выбери класс")
-    print("===============================")
+    print(dial[4])
 
     for k, v in enumerate(spec):
         print(f"{k+1} - {v}")
 
     while True:
 
-        c = input(f"Что выбераешь?\n"
-                  f"Ответ: ")
+        c = input(dial[5])
         match c:
             case "1":
                 d["spec"] = "Лучник"
-                d["health"] = d["health"] - 1
+                d["health"] = d["health"] - 10
                 d["agility"] = d["agility"] + 1
                 break
             case "2":
                 d["spec"] = "Мечник"
-                d["health"] = d["healths"] + 1
+                d["health"] = d["healths"] + 10
                 d["agility"] = 2
                 d["defense"] = d["defense"] + 2
                 break
             case "3":
                 d["spec"] = "Ассасин"
+                d["health"] = d["health"] - 15
                 d["agility"] = d["agility"] + 3
                 d["damage"] = d["damage"] + 2
                 d["defense"] = 1
                 break
             case _:
-                print("Не не, небылицы не рассказываей, что выберешь то?")
+                print(dial[6])
 
-    print(f"Ух, ну и класс же ты взял, чтож, выглядишь ты на такие параметры:\n")
+    print(dial[7])
     for k, v in d.items():
         print(f"{k} - {v}")
 
-    you_sure = input(f"Так, а ты уверен что твои параметры тебе подходят, или класс может не такой?\n"
-                     f"Ответ y/n(any): ").lower()
+    you_sure = input(dial[8]).lower()
 
     if you_sure == "y":
         for k, v in d.items():
