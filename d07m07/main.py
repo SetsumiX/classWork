@@ -141,8 +141,9 @@ class LinkedList:
         temp = []
         while current:
             if current is not None:
-                temp.append(current)
-        return temp
+                temp.append(current.value)
+                current = current.next
+        return len(temp)
 
     def delete(self, value):
         if not self.head:
