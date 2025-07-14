@@ -242,8 +242,10 @@ class Clock:
 
     @classmethod
     def unpack_pickle(cls, filename):
-        with open(filename, "r") as file:
-            data = ...
+        with open(filename, "rb") as file:
+            data = pickle.load(file)
+        return data
+
 
     def unpack_json(self, filename):
         with open(filename, "r") as file:
@@ -264,4 +266,6 @@ for i in range(120):
 
 print(time_cur)
 time_cur.unpack_json("errortime.json")
+print(time_cur)
+time_cur.unpack_pickle("errortime.txt")
 print(time_cur)
