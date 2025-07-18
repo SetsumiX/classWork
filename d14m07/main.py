@@ -21,9 +21,9 @@ class FilmMode:
 
     def get_film_by_title(self, title):
         for film in self.films:
-            if film['title'].lower == title.lower: # Непонятно почему не работает (222)
+            if title.lower() in film['title'].lower():
                 return film
-            return None
+        return None
 
     def delete_film(self, title):
         film = self.get_film_by_title(title)
@@ -83,15 +83,15 @@ class FilmController:
         else:
             self.view.display_massage(f"Фильм {title} не найден")
 
-# if __name__ == "__main__":
-#     model = FilmMode()
-#     view = FilmView()
-#     controller = FilmController(model, view)
-#
-#     controller.add_film("Дикий дик", "2", "3", "4", "5", "6", "7")
-#     controller.add_film("Семёрка", "8", "9", "10", "11", "12", "13")
-#
-#     controller.show_film("дикий дик")
+if __name__ == "__main__":
+    model = FilmMode()
+    view = FilmView()
+    controller = FilmController(model, view)
+
+    controller.add_film("Дикий дик", "2", "3", "4", "5", "6", "7")
+    controller.add_film("Семёрка", "8", "9", "10", "11", "12", "13")
+
+    print(controller.show_film("дикий"))
 
 
 
@@ -127,7 +127,7 @@ class FilmController:
 #         self.width = width
 #         self.height = height
 #
-# class AreaCulc:
+# class AreaCalc:
 #     def calculate(self, shape):
 #         if isinstance(shape, Rectangle):
 #             return shape.width * shape.height
