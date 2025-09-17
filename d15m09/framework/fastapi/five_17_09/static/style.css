@@ -1,0 +1,48 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 23px;
+    margin-top: 7px;
+}
+
+button{
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.btn-primary{
+    background-color: rgb(187, 187, 187);
+    color: rgb(0, 45, 112);
+    border: none;
+}
+.btn-success{
+    background-color: rgb(54, 1, 1);
+    color: rgb(233, 233, 233);
+    border: none;
+}
+.btn-stats{
+    background-color: aquamarine;
+    color: black;
+    border: none;
+}
+.btn-clear{
+    background-color: rgb(117, 117, 117);
+    color: rgb(216, 216, 216);
+    border: none;
+}
+#message{
+    margin-top: 20px;
+    border: 1px solid rgb(51, 57, 90);
+    color: rgb(255, 255, 255);
+}
+.loading{
+    color: rgb(53, 53, 53);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.error{
+    color: rgb(255, 55, 55);
+    text-shadow: 1px 1px rgb(27, 27, 27);
+}
+.success{
+    color: rgb(2, 128, 2);
+    text-shadow: 1px 1px rgb(27, 27, 27);
+}

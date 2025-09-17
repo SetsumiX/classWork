@@ -6,10 +6,16 @@
 
 </head>
     <body
-    data-message="{{data.message}}"
-    data-user="{{data.user}}">
+    data-welcome-message="{{data.welcome.message}}"
+    data-welcome-user="{{data.welcome.user}}"
+    data-welcome-time-is-it="{{data.welcome.time_is_it}}"
+    data-profile-email="{{data.profile.email}}"
+    data-profile-role="{{data.profile.role}}"
+    data-profile-be-online="{{data.profile.be_online}}"
+    >
         <p>Hi</p>
-        <button class="btn1">Toch there</button>
+        <button class="btn1">Приветствие</button>
+        <button class="btn2">Профиль</button>
         <div id="message"></div>
     </body>
 <script src="/static/script.js" defer>
