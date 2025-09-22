@@ -32,7 +32,8 @@ async def get_profile():
         "email": "gigli@gmail.com",
         "role": "guest",
         "last_login": "2024-10-15",
-        "login_count": ["read", "write", "delete"],
+        "login_count": 42,
+        "permission": ["read", "write", "delete"],
     }
 
 @app.get("/api/statistic")
@@ -41,7 +42,7 @@ async def get_statistic():
         "total_users": 125,
         "active_users": 20,
         "new_users_week": 3,
-        "system": "oneline",
+        "system": "online",
     }
 
 if __name__ == "__main__":

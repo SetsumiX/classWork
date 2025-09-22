@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(248, 201, 139);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+input,
+button{
+    padding: 10px;
+    margin: 5px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}

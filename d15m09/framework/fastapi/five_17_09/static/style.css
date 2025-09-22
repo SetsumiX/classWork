@@ -31,8 +31,11 @@ button{
 }
 #message{
     margin-top: 20px;
+    padding: 20px;
     border: 1px solid rgb(51, 57, 90);
-    color: rgb(255, 255, 255);
+    color: rgb(164, 255, 212);
+    background-color: rgb(156, 156, 156);
+
 }
 .loading{
     color: rgb(53, 53, 53);
