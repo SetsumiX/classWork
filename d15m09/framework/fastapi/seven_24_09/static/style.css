@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(248, 201, 139);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+input,
+button{
+    padding: 10px;
+    margin: 5px;
+}
+
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.logout-btn{
+    background-color: rgb(255, 82, 82);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 10px 20px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+input[type = "text"], input[type= "password"]{
+    flex: 1;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button{
+    padding: 12px 20px;
+    background-color: rgb(85, 99, 189);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.h1-authoriz{
+    position: relative;
+    left: 35%;
+}
+
+.ff{
+    display: flex;
+    justify-content: space-betwin;
+}
+
+form{
+    margin-right: 20px;
+    border: 2px double rgb(184, 126, 88);
+    border-radius: 10px;
+    padding: 10px;
+}

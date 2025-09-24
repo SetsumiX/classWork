@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+    <script src="./static/script.js" defer></script>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Твой список дел</h1>
+                <a href="/logout" class="logout-btn">Выйти</a>
+            </div>
+            <div class="input-section">
+                <input type="text" id="task-input" placeholder="Введите задачу">
+                <button onclick="addTask()">Добавить</button>
+            </div>
+            <div class="task-list">
+                <!--Здесь будут показаны задачи-->>
+            </div>
+        </div>
+    </body>
+</html>
