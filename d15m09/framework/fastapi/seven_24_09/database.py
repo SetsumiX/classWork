@@ -39,7 +39,7 @@ class Database:
     def get_user_todos(self, user_id: int) -> List[dict]:
         conn = self.get_connect()
         cursor = conn.cursor()
-        cursor.execute("SELECT id, task, complete, dateCreate FROM todos WHERE user_id = ? ORDER BY create_at DESC", (user_id,))
+        cursor.execute("SELECT id, task, complete, dateCreate FROM todos WHERE user_id = ?", (user_id,))
         res = cursor.fetchall()
         conn.close()
         return [dict(row) for row in res]
@@ -48,7 +48,52 @@ class Database:
         conn = self.get_connect()
         cursor = conn.cursor()
         cursor.execute("SELECT id FROM users WHERE username = ? AND password = ?", (username, password))
-        result = cursor.fetchall()
+        result = cursor.fetchone()
         conn.close()
         return result["id"] if result else None
 
+    def create_user(self, username:str, password:str) -> Optional[int]:
+        try:
+            conn = self.get_connect()
+            cursor = conn.cursor()
+
+            cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+
+            user_id = cursor.lastrowid
+
+            conn.commit()
+            conn.close()
+
+            return user_id
+
+        except sqlite3.IntegrityError:
+            return None
+
+    def add_todo(self, user_id: int, task: str) -> bool:
+        try:
+            conn = self.get_connect()
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO todos (user_id, task) VALUES (?, ?)", (user_id, task))
+            conn.commit()
+            conn.close()
+            return True
+        except:
+            return False
+
+    def del_todo(self, user_id: int, todo_id: int) -> bool:
+        conn = self.get_connect()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM todos WHERE id = ? and user_id = ?", (todo_id, user_id))
+        conn.commit()
+        conn.close()
+        return cursor.rowcount > 0
+
+    def toggle_todo(self, user_id: int, todo_id: int) -> bool:
+        conn = self.get_connect()
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE todos SET complete = NOT complete WHERE id = ? AND user_id = ?",
+            (todo_id, user_id))
+        conn.commit()
+        conn.close()
+        return cursor.rowcount > 0
